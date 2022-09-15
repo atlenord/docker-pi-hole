@@ -1,4 +1,4 @@
-# K3s-pi
+# Docker-Pi-hole
 
 Configure Raspberry Pi MicroSD
 In order to perform this operation, you will need the following equipments:
