@@ -35,7 +35,7 @@ Install extra tools.
 Optional, create an alias.
 `$ nano ~/.bashrc`
 
-> Add -> alias ll='ls -alF'
+> alias ll='ls -alF'
 
 Disable swap file usage by changing the parameter in file.
 
