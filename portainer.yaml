@@ -1,0 +1,47 @@
+---
+#DOCKER-COMPOSE template in Portainer
+version: "3"
+services:
+  unbound:
+    container_name: unbound-dns
+    hostname: unbound-dns
+    image: mvance/unbound-rpi:latest
+    networks:
+      my_pi_network:
+        ipv4_address: 10.0.0.11
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+  pihole:
+    container_name: pi-hole
+    hostname: pi-hole
+    image: pihole/pihole:latest
+    networks:
+      my_pi_network:
+        ipv4_address: 10.0.0.10
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "80:80/tcp"
+    environment:
+      - TZ=Europe/Oslo
+      - WEBPASSWORD=${WEB_PASSWORD}
+      - DNS1=10.0.0.11#53
+      - DNS2=no
+    volumes:
+      - etc-pihole:/etc/pihole
+      - etc-dnsmasq.d:/etc/dnsmasq.d
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+volumes:
+  etc-pihole:
+  etc-dnsmasq.d:
+
+networks:
+  my_pi_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.0.0/16
+          gateway: 10.0.0.1
