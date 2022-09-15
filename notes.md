@@ -21,17 +21,18 @@ Launch Raspberry Pi Imager, then click on “Select OS” and select Raspberry P
 Press Cmd+Shift+X (on Mac) or Ctrl+Shift+X (on Windows) to get to the Advanced options window. 
 Enable SSH and WiFi.
 
-SSH into Raspberry Pi
+SSH into Raspberry Pi.
 
 Update and Upgrade the Raspberry PI OS.
 
 `$ sudo apt update && sudo apt full-upgrade -y`<br>
 `$ sudo reboot`
 
-Optional: Install extra helpfull tools and settings.
+Install extra tools.
 
 `$ sudo apt install avahi-daemon git libffi-dev libssl-dev python3-dev python3 python3-pip dnsutils -y`<br>
 
+Optional, create an alias.
 `$ nano ~/.bashrc`
 
 > Add -> alias ll='ls -alF'
@@ -42,7 +43,7 @@ Disable swap file usage by changing the parameter in file.
 
 > CONF_SWAPSIZE=0
 
-Add following to the end of the line:
+Add following to the end of the line.
 
 `$ sudo nano /boot/cmdline.txt`
 
