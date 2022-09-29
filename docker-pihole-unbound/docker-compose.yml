@@ -41,6 +41,7 @@ services:
 volumes:
   etc-pihole:
   etc-dnsmasq.d:
+  unbound:
 networks:
   my_pi_network:
     driver: bridge
