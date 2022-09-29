@@ -63,7 +63,8 @@ Turn off Autologin / Console
 
 `$ curl -sSL https://get.docker.com | sh`<br>
 `$ sudo usermod -aG docker $USER`<br>
-`$ sudo pip3 install docker-compose`
+`$ sudo pip3 install docker-compose`<br>
+`$ sudo reboot`
 
 ## Install Portainer
 
