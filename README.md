@@ -72,6 +72,11 @@ Turn off Autologin / Console
 
 (docker run -d -p 9000:9000 --name=portainer -v /var/run/docker.sock:/var/run/docker.sock --restart=unless-stopped portainer/portainer:arm)
 
+## Run Pi-hole and unbound with Docker-Compose
+From the catalog ../docker-pihole-unbound/ run...
+
+`$ docker-compose up -d to build and start pi-hole`
+
 ## Draft notes
 
 mkdir pihole
