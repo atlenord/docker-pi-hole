@@ -73,7 +73,9 @@ Turn off Autologin / Console
 ## Run Pi-hole and unbound with Docker-Compose
 From the catalog ../docker-pihole-unbound/ run...
 
-`$ docker-compose up -d to build and start pi-hole`
+`$ docker-compose up -d
+
+to build and start pi-hole`
 
 ## Draft notes
 
